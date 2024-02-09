@@ -1,14 +1,20 @@
 {
-    "name": "Node.js",
-    "dockerfile": "DockerFile",
-    "settings": {
-        "terminal.integrated.shell.linux": "/bin/bash"
+    "image": "mcr.microsoft.com/vscode/devcontainers/universal:1.0",
+    "settings": { 
+        "terminal.integrated.defaultProfile.linux": "/bin/bash"
     },
+    "postCreateCommand": "apt-get update && apt-get install -y gcc g++ make openjdk-11-jdk curl && curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y && curl -fsSL https://deb.nodesource.com/setup_14.x | bash - && apt-get install -y nodejs && npm install -g create-react-app && wget https://packages.microsoft.com/config/ubuntu/20.04/packages-microsoft-prod.deb -O packages-microsoft-prod.deb && dpkg -i packages-microsoft-prod.deb && apt-get update && apt-get install -y dotnet-sdk-5.0",
+    "forwardPorts": [3000],
     "extensions": [
         "broadcomMFD.cobol-language-support",
         "broadcomeMFD.ccf",
         "Zowe.vscode-extension-for-zowe",
-        "broadcomeMFD.bridge-for-git-explorer"
-    ],
-    "remoteUser": "node"
+        "broadcomeMFD.bridge-for-git-explorer",
+        "IBM.zopeneditor",
+        "halcyonTechLtd.code-for-ibmi",
+        "ms-dotnettools.csharp",
+        "mtxr.sqltools",
+        "ms-ossdata.vscode-postgresql",
+        "ms-mssql.mssql"
+    ]
 }
