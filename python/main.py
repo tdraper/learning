@@ -9,6 +9,7 @@ print("New list contents:", numbers)  # Printing current list contents.
 
 print("\nLength of list: ", len(numbers))
 
-del numbers[1:]
+del numbers[1:3]
 
 print("\nNew Length list:", len(numbers))
+print("New list contents:", numbers)  # Printing current list contents.

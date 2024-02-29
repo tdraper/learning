@@ -1,5 +1,8 @@
 {
     "image": "mcr.microsoft.com/vscode/devcontainers/universal:1.0",
+    "features": {
+        "ghcr.io/devcontainers/features/powershell:1":{}
+    },
     "settings": { 
         "terminal.integrated.defaultProfile.linux": "/bin/bash"
     },
